@@ -1,0 +1,43 @@
+.container-fluid {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.row.content {
+  height: 100%;
+}
+
+.menu {
+  background-image: /*linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),*/ url("https://c4.wallpaperflare.com/wallpaper/899/539/803/simple-background-artist-minimalism-digital-art-wallpaper-preview.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  overflow: auto;
+}
+
+.statistics {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm21-background-chim-18.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=5562ca3aac243ece09234617aa19edd5");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    height: auto;
+    padding: 15px;
+  }
+
+  .statistics {
+    height: auto;
+    padding: 15px;
+  }
+
+  .row.content {
+    height: auto;
+  }
+}
+
+
+
