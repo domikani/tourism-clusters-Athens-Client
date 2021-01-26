@@ -1,7 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {IResponse} from '../Interfaces/IResponse';
+import {AttractionsService} from '../services/attractions.service';
+import {MapService} from '../services/map.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -9,33 +12,53 @@ import {IResponse} from '../Interfaces/IResponse';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  public Attractions = true;
+  public toggleGlyphicon;
   public visible = false;
-  public data = [];
+  public dataAttractions = [];
 
-
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private attractionsService: AttractionsService, private mapService: MapService) {
   }
 
   ngOnInit() {
   }
 
-  @Input()
   public showPlaces() {
     this.http.get<IResponse>(environment.apiUrl + '/posts/attractions').subscribe(response => {
       if (response.success) {
-        this.data = response.data;
-
+        this.dataAttractions = response.features;
       }
     });
   }
 
 
   onclick() {
-    this.Attractions = !this.Attractions;
     this.visible = !this.visible;
+    this.toggleGlyphicon = !this.toggleGlyphicon;
     this.showPlaces();
+  }
+
+  addGlyphiconClasses() {
+    if (this.toggleGlyphicon) {
+      return 'glyphicon glyphicon-eye-close';
+    } else {
+      return 'glyphicon glyphicon-eye-open';
+    }
+  }
+
+  zoom(event: Event) {
+    this.http.get<IResponse>(environment.apiUrl + '/posts/attractions').subscribe(response => {
+      if (response.success) {
+        this.dataAttractions = response.features;
+        const map = this.mapService.map;
+        for (const att in this.dataAttractions) {
+          if ((event.target as HTMLInputElement).innerText === this.dataAttractions[att].properties.name) {
+            map.flyTo([this.dataAttractions[att].geometry.coordinates[1], this.dataAttractions[att].geometry.coordinates[0]], 18);
+          }
+        }
+
+      }
+    });
+
   }
 
 

@@ -5,3 +5,19 @@ html, body {
   height: 100%;
 }
 
+.leaflet-touch .leaflet-bar a {
+  width: 60px;
+  height: 30px;
+}
+
+.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out {
+  font-family: Helvetica, serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  border: 2px solid rgba(0, 0, 0, 1);
+}

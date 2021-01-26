@@ -7,6 +7,7 @@ import {MenuComponent} from './menu/menu.component';
 import {MapComponent} from './map/map.component';
 import {StatisticsComponent} from './statistics/statistics.component';
 import {HttpClientModule} from '@angular/common/http';
+import {AttractionsService} from './services/attractions.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AttractionsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

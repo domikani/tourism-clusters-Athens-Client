@@ -2,14 +2,18 @@
   <header><h1>Menu</h1></header>
   <div>
     <button (click)="onclick()" type="button"
-            class="btn3d btn btn-default btn-lg center-block btn-attractions">{{Attractions ? "Top Attractions" : "Close Top Attractions"}}</button>
+            class="btn3d btn btn-default btn-lg center-block btn-attractions">
+      <span [ngClass]="addGlyphiconClasses()"></span>Top Attractions
+    </button>
   </div>
   <ng-container *ngIf="visible" class="cards">
-    <div class="well text-center" *ngFor="let attraction of data">
-      <div class="card-body">
+    <div class="well text-center" *ngFor="let attraction of dataAttractions">
+      <div class="card-body" (click)="zoom($event)">
         <div class="card-title"><strong>{{attraction.properties.name}}</strong></div>
         <img class="img-responsive" [src]=attraction.properties.img alt="">
-        <div><a href="{{attraction.properties.source}}" target="_blank">{{attraction.properties.sourceName}}</a>
+        <div class="category">Category: {{attraction.properties.category}}</div>
+        <div class="sources"><a href="{{attraction.properties.source}}"
+                                target="_blank">Source: {{attraction.properties.sourceName}}</a>
         </div>
 
       </div>
