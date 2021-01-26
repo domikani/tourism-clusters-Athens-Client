@@ -28,8 +28,13 @@ export class AttractionsService {
       const onEachFeature = (feature, layer) => {
         if (feature.properties && feature.properties.name) {
           // tslint:disable-next-line:only-arrow-functions
-          layer.on('mouseover', () => {
-            layer.bindPopup(feature.properties.name).openPopup();
+          layer.on({
+            mouseover: () => {
+              layer.bindPopup(feature.properties.name).openPopup();
+            },
+            mouseout: () => {
+              layer.closePopup();
+            }
           });
         }
       };

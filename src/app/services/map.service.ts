@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import * as L from 'leaflet';
-import {AttractionsService} from './attractions.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +7,7 @@ import {AttractionsService} from './attractions.service';
 export class MapService {
   public map;
 
-  constructor(private attractionsService: AttractionsService) {
+  constructor() {
 
   }
 
