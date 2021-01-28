@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {MapService} from './map.service';
+import {ClusterService} from './cluster.service';
+
 import * as L from 'leaflet';
 
 @Injectable({
@@ -7,10 +10,15 @@ import * as L from 'leaflet';
 })
 export class AttractionsService {
 
-  constructor(private http: HttpClient) {
+
+  constructor(private http: HttpClient, private mapService: MapService, private clusterService: ClusterService) {
+
+
   }
 
+
   makeAttractionsMarker(map): void {
+
     this.http.get('http://localhost:3000/posts/attractions').subscribe((res: any) => {
       const createCustomIcon = (feature, latlng) => {
         const myIcon = L.icon({
@@ -44,10 +52,13 @@ export class AttractionsService {
       };
       const attractionsLayer = L.geoJSON(res, myLayerOptions).addTo(map);
       const attractionsOverlay = {
-        'Top Attractions': attractionsLayer
+        'Top Attractions': attractionsLayer,
+        'Clusters': this.clusterService.clusterLayer
       };
 
-      const layers = L.control.layers(null, attractionsOverlay, /*{sortLayers: true}*/).addTo(map);
+      const layers = L.control.layers(this.mapService.baseMaps, attractionsOverlay/*{sortLayers: true}*/).addTo(map);
+
+
     });
   }
 

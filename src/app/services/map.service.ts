@@ -1,11 +1,19 @@
 import {Injectable} from '@angular/core';
+
 import * as L from 'leaflet';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapService {
   public map;
+  public ctrlZoom;
+  public cartoDBlayer;
+  public imageryLayer;
+  public cartoDBdarkLayer;
+  public baseMaps;
+  public test;
 
   constructor() {
 
@@ -19,20 +27,41 @@ export class MapService {
       zoomControl: false,
     });
 
-    const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    this.cartoDBlayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap' +
         '</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       subdomains: 'abcd',
       maxZoom: 19
     });
-    tiles.addTo(this.map);
+
+    this.imageryLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+
+    this.cartoDBdarkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    });
+
+    this.map.addLayer(this.cartoDBlayer);
+
+    this.baseMaps = {
+      'Voyager': this.cartoDBlayer,
+      'Imagery': this.imageryLayer,
+      'Dark Matter': this.cartoDBdarkLayer
+    };
+
 
     // custom control zoom
-    const ctrlZoom = L.control.zoom({
+    this.ctrlZoom = L.control.zoom({
       zoomInText: 'In',
       zoomOutText: 'Out',
       position: 'topright'
     }).addTo(this.map);
+
+    console.log(this.baseMaps)
+
 
     // Overlays
 
