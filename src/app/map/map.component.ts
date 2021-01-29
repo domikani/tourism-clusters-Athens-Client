@@ -20,8 +20,6 @@ export class MapComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.mapService.initMap();
     this.attractionsService.makeAttractionsMarker(this.mapService.map);
-    /*this.clusterService.getClusterData(this.mapService.map);*/
-
 
   }
 

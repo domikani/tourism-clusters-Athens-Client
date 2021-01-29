@@ -60,8 +60,6 @@ export class MapService {
       position: 'topright'
     }).addTo(this.map);
 
-    console.log(this.baseMaps)
-
 
     // Overlays
 

@@ -5,7 +5,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MenuComponent} from './menu/menu.component';
 import {MapComponent} from './map/map.component';
-import {StatisticsComponent} from './statistics/statistics.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AttractionsService} from './services/attractions.service';
 
@@ -13,8 +12,7 @@ import {AttractionsService} from './services/attractions.service';
   declarations: [
     AppComponent,
     MenuComponent,
-    MapComponent,
-    StatisticsComponent
+    MapComponent
   ],
   imports: [
     BrowserModule,
