@@ -7,21 +7,26 @@ import {MenuComponent} from './menu/menu.component';
 import {MapComponent} from './map/map.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AttractionsService} from './services/attractions.service';
+import {StatisticsComponent} from './statistics/statistics.component';
+import {ChartsModule, ThemeService} from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    MapComponent
+    MapComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ChartsModule,
   ],
   providers: [
-    AttractionsService,
+    AttractionsService, ThemeService
   ],
   bootstrap: [AppComponent]
 })

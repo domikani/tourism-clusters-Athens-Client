@@ -64,7 +64,7 @@ export class ClusterService {
       if (feature.properties && feature.properties.frequency) {
         layer.on({
           click: (event) => {
-            this.myValue = feature.properties.frequency;
+            layer.bindPopup(`<btn class='btn btn-primary' id=${feature.properties.cluster_id}>Show statistics</btn>`).openPopup();
             this.mapService.map.fitBounds(event.target.getBounds());
           },
         });
