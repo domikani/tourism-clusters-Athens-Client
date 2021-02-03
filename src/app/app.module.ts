@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AttractionsService} from './services/attractions.service';
 import {StatisticsComponent} from './statistics/statistics.component';
 import {ChartsModule, ThemeService} from 'ng2-charts';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {ChartsModule, ThemeService} from 'ng2-charts';
     AppComponent,
     MenuComponent,
     MapComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

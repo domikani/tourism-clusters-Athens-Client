@@ -1,14 +1,26 @@
-<div class="chart-wrapper" *ngIf="chartReady">
-  <canvas baseChart
-          [datasets]="lineChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins">
-  </canvas>
+<div class="content">
+  <header><h3>Areas Of Interest Statistics Board</h3></header>
+  <div class="info">
+    <h4><span class="glyphicon glyphicon-exclamation-sign"></span> Click on the circles to reveal statistics and
+      information
+      about the Areas Of Interest
+    </h4>
+  </div>
+  <div class="chart-wrapper" *ngIf="chartReady">
+    <p>Area Of Interest : '{{clusterName}}'</p>
+    <p>Photos taken between 2009-2019 : {{photosTaken}}</p>
+    <canvas baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
 </div>
+
 
 
 
