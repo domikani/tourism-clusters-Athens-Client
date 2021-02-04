@@ -4,7 +4,7 @@
 }
 
 .row.content {
-  height: 94%;
+  height: 100%;
 }
 
 .map {
@@ -42,6 +42,7 @@
 .statistics {
   background-color: whitesmoke;
   height: 100%;
+  overflow: auto;
 }
 
 @media screen and (max-width: 767px) {

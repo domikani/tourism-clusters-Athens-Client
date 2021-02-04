@@ -38,7 +38,9 @@ export class AttractionsService {
           // tslint:disable-next-line:only-arrow-functions
           layer.on({
             mouseover: () => {
-              layer.bindPopup(feature.properties.name).openPopup();
+              layer.bindPopup(
+                `<h4 class="text-center">${feature.properties.name}</h4><img class="img-responsive center-block" src="${feature.properties.img}"  alt="image">`
+              ).openPopup();
             },
             mouseout: () => {
               layer.closePopup();

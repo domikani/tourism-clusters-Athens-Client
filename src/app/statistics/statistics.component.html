@@ -1,23 +1,50 @@
 <div class="content">
   <header><h3>Areas Of Interest Statistics Board</h3></header>
   <div class="info">
-    <h4><span class="glyphicon glyphicon-exclamation-sign"></span> Click on the circles to reveal statistics and
-      information
-      about the Areas Of Interest
+    <h4><span class="glyphicon glyphicon-exclamation-sign"></span> Click on the circles to reveal temporal statistics
+      and information about an Area Of Interest
     </h4>
   </div>
   <div class="chart-wrapper" *ngIf="chartReady">
     <p>Area Of Interest : '{{clusterName}}'</p>
-    <p>Photos taken between 2009-2019 : {{photosTaken}}</p>
-    <canvas baseChart
-            [datasets]="lineChartData"
-            [labels]="lineChartLabels"
-            [options]="lineChartOptions"
-            [colors]="lineChartColors"
-            [legend]="lineChartLegend"
-            [chartType]="lineChartType"
-            [plugins]="lineChartPlugins">
-    </canvas>
+    <p>Geotagged photos received between 2009-2019: <strong>{{photosTaken}}</strong></p>
+    <div class="well">
+      <canvas baseChart
+              [datasets]="yearChartData"
+              [labels]="yearChartLabels"
+              [options]="yearChartOptions"
+              [colors]="yearChartColors"
+              [legend]="yearChartLegend"
+              [chartType]="yearChartType"
+              [plugins]="yearChartPlugins">
+      </canvas>
+    </div>
+    <div class="well">
+      <canvas baseChart
+              [datasets]="monthChartData"
+              [labels]="monthChartLabels"
+              [options]="monthChartOptions"
+              [colors]="monthChartColors"
+              [legend]="monthChartLegend"
+              [chartType]="monthChartType"
+              [plugins]="monthChartPlugins">
+      </canvas>
+    </div>
+
+
+    <div class="well">
+      <canvas baseChart
+              [datasets]="countryChartData"
+              [labels]="countryChartLabels"
+              [colors]="countryChartColors"
+              [options]="countryChartOptions"
+              [legend]="countryChartLegend"
+              [chartType]="countryChartType"
+              [plugins]="countryChartPlugins">
+      </canvas>
+    </div>
+
+
   </div>
 </div>
 
