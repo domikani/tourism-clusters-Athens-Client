@@ -141,7 +141,7 @@ export class StatisticsComponent implements OnInit {
     for (let c = 0; c < this.countData.length; c++) {
       if ((event.target as HTMLInputElement).id == this.countData[c]._id) {
         this.photosTaken = this.countData[c].data[0];
-        this.clusterName = this.countData[c]._id;
+        this.clusterName = this.countData[c].aoi[0];
         for (let d = 0; d < this.statsData[0].Yearly[c].data.length; d++) {
           this.yearData.push(this.statsData[0].Yearly[c].data[d].total);
           this.yearLabels.push(this.statsData[0].Yearly[c].data[d].year);

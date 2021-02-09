@@ -72,6 +72,7 @@ header {
   border: 0;
   transition: all 60ms linear;
   white-space: normal;
+  margin-bottom: 20px;
 }
 
 .btn3d:active:focus,

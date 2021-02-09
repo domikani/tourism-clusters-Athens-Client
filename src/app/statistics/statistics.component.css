@@ -4,13 +4,12 @@ header {
   font-size: 1.8rem;
 }
 
-.info {
+.information {
   padding: 5px;
   text-align: justify;
 }
 
 .stat {
-
   border: 1px solid black;
 }
 

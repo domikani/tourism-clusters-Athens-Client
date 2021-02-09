@@ -22,7 +22,7 @@ export class AttractionsService {
     this.http.get('http://localhost:3000/posts/attractions').subscribe((res: any) => {
       const createCustomIcon = (feature, latlng) => {
         const myIcon = L.icon({
-          iconUrl: './assets/location-pin.svg',
+          iconUrl: './assets/pin.svg',
           iconSize: [35, 35],
           shadowSize: [35, 20],
           iconAnchor: [12, 12],
