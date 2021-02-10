@@ -25,7 +25,7 @@ export class StatisticsComponent implements OnInit {
   public yearChartLabels: Label[] = [];
   public chartReady = false;
   yearChartOptions = {
-    responsive: true,
+    /*responsive: true,*/
     title: {
       display: true,
       text: 'Temporal visitors concentration from 2009 to 2019',
@@ -111,7 +111,7 @@ export class StatisticsComponent implements OnInit {
   public countryLabels = [];
   public countryChartLabels: Label[] = [];
   countryChartOptions = {
-    responsive: true,
+     responsive: true,
     title: {
       display: true,
       text: 'Visitors by country (excluded Greece and unknown country name)',

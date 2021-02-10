@@ -45,6 +45,7 @@ html, body {
   opacity: 0.7;
   border-radius: 50%;
 
+
 }
 
 .legend-header {
@@ -52,4 +53,8 @@ html, body {
   text-align: center;
   font-size: 1.5rem;
   color: #333333;
+}
+
+.info.legend.leaflet-control{
+  margin-bottom: 70px;
 }

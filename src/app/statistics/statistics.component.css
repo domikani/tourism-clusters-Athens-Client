@@ -13,4 +13,30 @@ header {
   border: 1px solid black;
 }
 
+@media screen and (min-width: 767px) and (max-width: 950px) {
+  .information h4 {
+    font-size: 1.1rem;
+  }
+
+  header h3 {
+    font-size: 1.6rem;
+  }
+
+  #chart.canvas.parentNode.style {
+    height: 128px;
+
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1050px) {
+  .information h4 {
+    font-size: 1.5rem;
+  }
+
+}
+
+
+
+
+
 

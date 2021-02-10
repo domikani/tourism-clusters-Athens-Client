@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   public toggleGlyphicon;
   public visible = false;
   public dataAttractions = [];
+  public paragraph = false;
 
   constructor(private http: HttpClient, private attractionsService: AttractionsService, private mapService: MapService) {
   }
@@ -35,6 +36,10 @@ export class MenuComponent implements OnInit {
     this.visible = !this.visible;
     this.toggleGlyphicon = !this.toggleGlyphicon;
     this.showPlaces();
+  }
+
+  clickParagraph(){
+    this.paragraph = !this.paragraph;
   }
 
   addGlyphiconClasses() {
