@@ -2,6 +2,8 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ChartDataSets,} from 'chart.js';
 import {Color, Label} from 'ng2-charts';
+import {environment} from '../../environments/environment';
+import {IResponse} from '../Interfaces/IResponse';
 
 
 @Component({
@@ -184,7 +186,7 @@ export class StatisticsComponent implements OnInit {
 
 
   public getYearStats() {
-    this.http.get('http://localhost:3000/posts/stats/years').subscribe(response => {
+    this.http.get<IResponse>(environment.apiUrl +'/posts/stats/years').subscribe(response => {
       this.responseData = response;
     });
   }

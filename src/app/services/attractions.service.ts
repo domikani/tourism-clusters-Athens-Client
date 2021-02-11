@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MapService} from './map.service';
 import {ClusterService} from './cluster.service';
+import {environment} from '../../environments/environment';
+import {IResponse} from '../Interfaces/IResponse';
 
 import * as L from 'leaflet';
 
@@ -19,7 +21,7 @@ export class AttractionsService {
 
   makeAttractionsMarker(map): void {
 
-    this.http.get('http://localhost:3000/posts/attractions').subscribe((res: any) => {
+    this.http.get<IResponse>(environment.apiUrl + '/posts/attractions').subscribe((res: any) => {
       const createCustomIcon = (feature, latlng) => {
         const myIcon = L.icon({
           iconUrl: './assets/pin.svg',
@@ -58,7 +60,7 @@ export class AttractionsService {
         'Clusters': this.clusterService.clusterLayer
       };
 
-      const layers = L.control.layers(this.mapService.baseMaps, attractionsOverlay/*{sortLayers: true}*/).addTo(map);
+      const layers = L.control.layers(this.mapService.baseMaps, attractionsOverlay).addTo(map);
 
 
     });

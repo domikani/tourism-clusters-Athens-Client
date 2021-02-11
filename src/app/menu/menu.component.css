@@ -3,7 +3,7 @@ header {
   margin: 5px;
 }
 
-.paragraph{
+.paragraph {
   text-align: justify;
   padding: 15px;
   font-size: 1.5rem;
@@ -12,6 +12,12 @@ header {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
+
+a.paragraph-link {
+  text-decoration: none;
+  color: black;
+}
+
 
 .well {
   margin: 20px 0;
@@ -124,7 +130,8 @@ header {
 
 }
 
-@media screen and (min-width: 767px) and (max-width: 950px) {
+@media screen and (min-width: 768px) and (max-width: 950px) {
+
   .well img {
     height: 10vw;
   }
@@ -133,7 +140,14 @@ header {
     font-size: 1.1rem;
   }
 
-  header h1{
+  .paragraph {
+    width: auto;
+    height: 200px;
+    overflow: auto;
+    font-size: 1.1rem;
+  }
+
+  header h1 {
     font-size: 1.8rem;
     font-weight: bold;
   }
@@ -141,7 +155,7 @@ header {
 
 }
 
-@media screen and (min-width: 950px) and (max-width: 1050px) {
+@media screen and (min-width: 950px) and (max-width: 1330px) {
   .well img {
     height: 10vw;
   }
@@ -149,6 +163,14 @@ header {
   .card-title, .sources, .category, .btn {
     font-size: 1.5rem;
   }
+
+  .paragraph {
+    width: auto;
+    height: 200px;
+    overflow: auto;
+    font-size: 1.5rem;
+  }
+
 
 }
 

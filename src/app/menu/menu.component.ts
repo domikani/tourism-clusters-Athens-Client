@@ -4,6 +4,7 @@ import {environment} from '../../environments/environment';
 import {IResponse} from '../Interfaces/IResponse';
 import {AttractionsService} from '../services/attractions.service';
 import {MapService} from '../services/map.service';
+import * as L from 'leaflet';
 
 
 @Component({
@@ -18,9 +19,11 @@ export class MenuComponent implements OnInit {
   public paragraph = false;
 
   constructor(private http: HttpClient, private attractionsService: AttractionsService, private mapService: MapService) {
+
   }
 
   ngOnInit() {
+
   }
 
   public showPlaces() {
@@ -29,6 +32,7 @@ export class MenuComponent implements OnInit {
         this.dataAttractions = response.features;
       }
     });
+
   }
 
 
@@ -38,9 +42,11 @@ export class MenuComponent implements OnInit {
     this.showPlaces();
   }
 
-  clickParagraph(){
+  clickParagraph() {
     this.paragraph = !this.paragraph;
   }
+
+
 
   addGlyphiconClasses() {
     if (this.toggleGlyphicon) {
@@ -68,3 +74,4 @@ export class MenuComponent implements OnInit {
 
 
 }
+

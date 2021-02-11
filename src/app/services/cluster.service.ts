@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MapService} from './map.service';
+import {environment} from '../../environments/environment';
+import {IResponse} from '../Interfaces/IResponse';
 import * as L from 'leaflet';
 
 
@@ -21,7 +23,7 @@ export class ClusterService {
 
   constructor(private http: HttpClient, private mapService: MapService) {
 
-    this.http.get('http://localhost:3000/posts/clusters').subscribe((res: any) => {
+    this.http.get<IResponse>(environment.apiUrl +'/posts/clusters').subscribe((res: any) => {
 
       this.clusterData = res.features;
       this.getClusterData();

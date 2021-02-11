@@ -12,12 +12,8 @@
   cursor: pointer;
 }
 
-.navbar a:hover {
-  color: #333333;
-}
-
 .navbar a:visited {
-  display: none;
+  background-color: olive;
 }
 
 

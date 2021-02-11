@@ -13,7 +13,7 @@ export class MapService {
   public imageryLayer;
   public cartoDBdarkLayer;
   public baseMaps;
-  public test;
+  public scale;
 
   constructor() {
 
@@ -26,6 +26,7 @@ export class MapService {
       zoom: 11,
       zoomControl: false,
     });
+
 
     this.cartoDBlayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap' +
@@ -60,10 +61,13 @@ export class MapService {
       position: 'topright'
     }).addTo(this.map);
 
-
-    // Overlays
-
-    /*const ctrlLayers = L.control.layers(overlays).addTo(this.map);*/
+    //scale
+    this.scale = L.control.scale({
+      position: 'bottomleft',
+      metric: true,
+      imperial: false,
+      maxWidth: 200
+    }).addTo(this.map);
 
 
   }
