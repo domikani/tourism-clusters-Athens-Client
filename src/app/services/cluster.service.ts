@@ -106,7 +106,7 @@ export class ClusterService {
           div.innerHTML += `<i style=background:#FFFF73 ></i>480 - ${grades[i]}<br>`;
         } else if (grades[i] > 694 && grades[i] <= 1345) {
           div.innerHTML += `<i style=background:#F5B800 ></i>${grades[i - 1] + 1} - ${grades[i]} <br>`;
-          console.log(`${grades[i - 1] + 1} - ${grades[i]}`);
+          /*console.log(`${grades[i - 1] + 1} - ${grades[i]}`);*/
         } else if (grades[i] > 1345 && grades[i] <= 2475) {
           div.innerHTML += `<i style=background:#F57A00 ></i>${grades[i - 1] + 1} - ${grades[i]} <br>`;
         } else if (grades[i] > 2475 && grades[i] <= 4006) {
@@ -115,7 +115,7 @@ export class ClusterService {
           div.innerHTML += `<i style=background:#A80000 ></i>${grades[i - 1] + 1} - ${grades[i]}`;
         }
       }
-      div.innerHTML += `<hr><img src='./assets/pin.svg' width="20px" height="20px" alt="pin-image"> Top Attractions<br>`;
+      div.innerHTML += `<hr><img src='../../assets/pin.svg' width="20px" height="20px" alt="pin-image"> Top Attractions<br>`;
 
       return div;
     };

@@ -17,12 +17,15 @@ export class MenuComponent implements OnInit {
   public visible = false;
   public dataAttractions = [];
   public paragraph = false;
+  public toggleLocation = false;
+  public toggleName = true;
 
   constructor(private http: HttpClient, private attractionsService: AttractionsService, private mapService: MapService) {
 
   }
 
   ngOnInit() {
+
 
   }
 
@@ -45,7 +48,6 @@ export class MenuComponent implements OnInit {
   clickParagraph() {
     this.paragraph = !this.paragraph;
   }
-
 
 
   addGlyphiconClasses() {
@@ -72,6 +74,34 @@ export class MenuComponent implements OnInit {
 
   }
 
+  getLocation() {
+    if (!navigator.geolocation) {
+      console.log('location is not supp');
+    }
+    navigator.geolocation.getCurrentPosition((position => {
+      /*console.log(`lat:${position.coords.latitude}, lon:${position.coords.longitude}`);*/
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+      this.toggleLocation = !this.toggleLocation;
+      this.toggleName = !this.toggleName;
+      if (this.toggleLocation) {
+        L.circleMarker([lat, lon], {
+          color: 'black',
+          stroke: true,
+          opacity: 1,
+          weight: 2,
+          fillColor: 'red',
+          fillOpacity: 0.5
+        }).addTo(this.mapService.map);
+        this.mapService.map.setView([lat, lon], 12);
+
+      } else {
+        this.mapService.map.setView([37.9643696, 23.7489174]);
+      }
+
+    }));
+
+  }
 
 }
 

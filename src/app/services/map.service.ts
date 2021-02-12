@@ -14,8 +14,11 @@ export class MapService {
   public cartoDBdarkLayer;
   public baseMaps;
   public scale;
+  public onLocationFound;
+  public onLocationError;
 
   constructor() {
+
 
   }
 
