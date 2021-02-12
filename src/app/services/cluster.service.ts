@@ -115,7 +115,7 @@ export class ClusterService {
           div.innerHTML += `<i style=background:#A80000 ></i>${grades[i - 1] + 1} - ${grades[i]}`;
         }
       }
-      div.innerHTML += `<hr><img src='../../assets/pin.svg' width="20px" height="20px" alt="pin-image"> Top Attractions<br>`;
+      div.innerHTML += `<br><img class="pin-image" src='../../assets/pin.svg' width="20px" height="20px" alt="pin-image"> Top Attractions`;
 
       return div;
     };
