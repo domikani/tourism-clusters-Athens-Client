@@ -65,42 +65,7 @@
   .row.content {
     height: auto;
   }
-  .legend {
-    line-height: 18px;
-    color: #555;
-  }
 
-  .info {
-    padding: 15px;
-    font: 1.3rem Lato, Helvetica, sans-serif;
-    background: white;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-  }
-
-  .legend i {
-    border: 1px solid black;
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-    margin-right: 8px;
-    opacity: 0.7;
-    border-radius: 50%;
-
-
-  }
-
-  .legend-header {
-    margin-top: 5px;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #333333;
-  }
-
-  .info.legend.leaflet-control{
-    margin-bottom: 70px;
-  }
 }
 
 
