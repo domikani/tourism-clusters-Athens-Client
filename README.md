@@ -1,3 +1,6 @@
+# Summary
+This web-GIS project is created within the framework of the MSc program in GIS of the Department of Physical Geography of Lund University, as a result of the final semester dissertation and aims to disclose spatial and temporal patterns of tourists by mining big spatial data from Flickr social media platform.
+
 # ClientTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
