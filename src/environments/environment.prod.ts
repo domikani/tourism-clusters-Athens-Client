@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://thesis-tourism.herokuapp.com'
+  apiUrl: 'https://tourism-api-en8k.onrender.com'
 };
