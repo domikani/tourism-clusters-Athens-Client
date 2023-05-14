@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://thesis-tourism.herokuapp.com'
+  apiUrl: 'https://tourism-api-en8k.onrender.com'
 };
 
 /*
